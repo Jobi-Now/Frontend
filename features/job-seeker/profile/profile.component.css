@@ -1,0 +1,20 @@
+section {
+    display: flex;
+    height: 3.125rem;
+    border-radius: 0.75rem;
+    justify-content: center;
+    align-items: center;
+    color: var(--tui-base-06);
+    border: 1px dashed var(--tui-base-06);
+}
+
+.label {
+    font: var(--tui-font-text-l);
+}
+
+.banner{
+  height: 16rem;
+  background-position: center center;
+  background-size: cover;
+  margin-bottom: -2rem
+}

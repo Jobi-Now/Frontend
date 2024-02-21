@@ -1,0 +1,80 @@
+<div class="quiz__splash__page">
+  <div class="absolute w-screen h-screen z-0">
+    <img ngSrc="/assets/image/quiz/quizePatternImage.jpeg" fill class="h-screen w-full opacity-50" alt="bg-image" />
+  </div>
+  <div class="absolute z-10 w-screen h-screen">
+    <app-auth-background></app-auth-background>
+  </div>
+  <div class="h-screen dark:text-white flex justify-center items-center">
+    <div class="quiz__splash__content relative grid grid-cols-1 sm:grid-cols-5 px-4 sm:px-32">
+      <div
+        class="user__info__card relative col-span-1 sm:col-start-2 sm:col-span-3 w-full px-8 py-4 bg-white z-10 rounded-lg shadow dark:border md:mt-0  dark:bg-gray-800 dark:border-gray-700 duration-1000 border-zinc-200 h-fit">
+        <div class="card__header flex items-center flex-row justify-between gap-y-2 mb-8 sm:mb-0">
+          <div class="quiz__timer flex items-center gap-2">
+            <div class="icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                style="fill: rgb(209, 160, 0)">
+                <path
+                  d="M12.25 2c-5.514 0-10 4.486-10 10s4.486 10 10 10 10-4.486 10-10-4.486-10-10-10zM18 13h-6.75V6h2v5H18v2z">
+                </path>
+              </svg>
+            </div>
+            <p class="text-lg font-medium flex items-end gap-1">15<span
+                class="time text-sm sr-only sm:not-sr-only">Minutes</span>
+            </p>
+          </div>
+          <div class="quiz__title text-center w-full">
+            <h1 class="text-2xl font-semibold">{{selectedBadge() && selectedBadge()?.quiz?.title}}</h1>
+          </div>
+          <div class="quiz__total__questions flex items-center gap-2">
+            <div class="icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                style="fill: rgb(209, 160, 0)">
+                <path
+                  d="M4 11h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zm10 0h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zM4 21h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zm13 0c2.206 0 4-1.794 4-4s-1.794-4-4-4-4 1.794-4 4 1.794 4 4 4z">
+                </path>
+              </svg>
+            </div>
+            <p class="text-lg font-medium flex items-end gap-1">{{selectedBadge()?.quiz?.questions?.length}}<span
+                class="time text-sm sr-only sm:not-sr-only">Questions</span>
+            </p>
+          </div>
+        </div>
+        <div class="card__body">
+          <div class="md:grid md:grid-cols-3 gap-6 my-10 flex flex-col border-y-4 py-10">
+            <div class="quiz__icon flex col-span-1 items-center justify-center">
+              <img [src]="selectedBadge() && selectedBadge()?.quiz?.imageUrl" class="w-64 h-64object-cover" alt="">
+            </div>
+            <div class="quiz__description py-5 col-span-2 flex items-center justify-center">
+              <p class="text-base italic text-center">
+                "{{selectedBadge()?.quiz?.description}}"
+              </p>
+            </div>
+          </div>
+          <div class="quiz__ctas mb-5">
+            <div class="flex items-center justify-center gap-4">
+              <button class="cancel__quiz px-6 py-2 bg-neutral-content text-black text-lg font-medium rounded"><a href="http://localhost:4200/user/profile">Cancel</a>
+              </button>
+              <a (click)="startQuiz()" [routerLink]="'/user/quiz/' + selectedBadge()?.quiz?.title + '/questions'"
+                class="start__quiz px-6 py-2 text-white text-lg font-medium rounded" style="background-color: rgb(255 195 0 / 62%);">
+                Start Quiz
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="fixed bottom-0 w-screen h-16 from-gray-300 bg-gradient-to-t to-transparent dark:from-gray-500 flex items-center pl-4 bg-opacity-20">
+    <button class="flex items-center focus:outline-none" aria-label="toggle profile dropdown">
+      <div class="w-8 h-8 overflow-hidden border-2 border-gray-400 rounded-full">
+        <img src="https://lh3.googleusercontent.com/a/ACg8ocJ_Ab7Vve4Q9MKa4M_khv0GUMWb9rvdkAPdx-JRpBSl_so=s96-c" class="object-cover w-full h-full" alt="avatar" height="2969" width="3000">
+      </div>
+      <div class="flex flex-col">
+        <h3 class="mx-2 hidden md:block">Bouchettoy</h3>
+        <h3 class="mx-2 hidden md:block">Marouane</h3>
+      </div>
+    </button>
+  </div>
+</div>

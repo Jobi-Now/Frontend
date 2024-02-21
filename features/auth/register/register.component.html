@@ -1,0 +1,103 @@
+<app-auth-layout>
+  <section>
+    <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto h-screen lg:py-0 transition bg-gray-50-100">
+      <div
+        class="w-full bg-white z-10 rounded-lg shadow dark:border md:mt-0 sm:max-w-4xl xl:p-0 dark:bg-gray-800 dark:border-gray-700 duration-1000 border-zinc-200">
+        <div class="p-6 space-y-4 md:space-y-6 sm:p-8 z-10">
+          <a href="https://yournewwebsite.com" class="">
+            <span class="text-2xl font-bold text-indigo-700">Jobinow</span>
+          </a>
+          <div class="form__header flex items-center justify-between mb-10">
+            <h1
+              class="text-xl flex flex-col gap-6 font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+              Create a New Account
+            </h1>
+            <div class="auth__btns">
+              <button appearance="outline" tuiButton type="button" class="w-full">
+                <tui-marker-icon mode="link" new size="xs" src="tuiIconGlobeLarge"
+                  class="tui-space_right-4"></tui-marker-icon>
+                Google
+              </button>
+            </div>
+          </div>
+          <div class="space-y-2">
+            <form class="space-y-4 md:space-y-6">
+              <div class="username-fields flex items-start gap-4 w-full">
+                <div class="mt-5 w-full">
+                  <label for="first-name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
+                    First Name</label>
+                  <tui-input formControlName="firstName">
+                    Type Your First Name
+                    <input tuiTextfieldSize="m" tuiTextfield autocomplete="username" type="text" name="first-name"
+                      id="first-name" placeholder="First Name"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                  </tui-input>
+                </div>
+                <div class="mt-5 w-full">
+                  <label for="last-name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
+                    Last Name</label>
+                  <tui-input formControlName="lastName">
+                    Type Your Last Name
+                    <input tuiTextfieldSize="m" tuiTextfield autocomplete="username" type="text" name="last-name"
+                      id="last-name" placeholder="Last Name"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                  </tui-input>
+                </div>
+              </div>
+              <div class="mt-5">
+                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
+                  email</label>
+                <tui-input formControlName="email">
+                  Type an email
+                  <input tuiTextfieldSize="m" tuiTextfield autocomplete="username" type="text" name="password"
+                    id="email" placeholder="ouharri@marjane.ma"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                </tui-input>
+              </div>
+              <div class="mb-5">
+                <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password
+                </label>
+                <tui-input-password formControlName="password">
+                  Type an password
+                  <input tuiTextfield tuiTextfieldSize="m" id="password" name="password" type="password"
+                    placeholder="********" autocomplete="current-password"
+                    class="tui-input bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                </tui-input-password>
+              </div>
+              <div class="mb-5">
+                <label for="confirm-password"
+                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Confirm Password
+                </label>
+                <tui-input-password formControlName="confirmPassword">
+                  Type an confirmed password
+                  <input tuiTextfield tuiTextfieldSize="m" id="confirm-password" name="confirm-password" type="password"
+                    placeholder="********" autocomplete="current-password"
+                    class="tui-input bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                </tui-input-password>
+              </div>
+              <div class="flex mt-5 items-center justify-between">
+                <div class="flex items-center justify-center mt-5">
+                  <div class="flex items-center h-5">
+                    <input id="remember" aria-describedby="remember" type="checkbox"
+                      class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800" />
+                  </div>
+                  <div class="ml-3 text-sm">
+                    <label for="remember" class="text-gray-500 dark:text-gray-300">Remember me</label>
+                  </div>
+                </div>
+                <a href="#" class="hover:underline text-[#ffe804] dark:text-white forgot-password-text mt-5">
+                  Forgot password?
+                </a>
+              </div>
+              <button
+                class="w-full login-btn text-white bg-blue-800 hover:bg-sky-600 focus:ring-4 disabled:cursor-not-allowed focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                type="submit" [disabled]="">
+                Sign in
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</app-auth-layout>

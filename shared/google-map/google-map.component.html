@@ -1,0 +1,21 @@
+<google-map
+  [height]="height"
+  [width]="width"
+  [zoom]="mapOptions.zoom!"
+  [options]="mapOptions"
+  [center]="mapOptions.center!"
+  (click)="moveMap($event)">
+
+  <map-marker
+    #mapMarker="mapMarker"
+    *ngFor="let marker of markers"
+    [position]="marker.getPosition()!"
+    [title]="marker.getTitle()!"
+    (mapClick)="openMapInfo(marker.getTitle()!, mapMarker)"
+  >
+  </map-marker>
+
+  <map-info-window>{{ infoContent }}</map-info-window>
+
+  <map-polyline [options]="polylineOptions" ></map-polyline>
+</google-map>

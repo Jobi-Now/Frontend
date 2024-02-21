@@ -1,0 +1,42 @@
+<div
+  class="transition-all duration-200 ease-linear z-50 bg-white" [class]="!IsOpen? 'p-2' :''">
+  <nav class="w-full text-black dark:text-white z-50" [class]="!IsOpen? '' : ''">
+    <div class="flex items-center justify-between px-4 w-full z-50">
+      <div class="flex items-:">
+        <a class="w-[200px] text-black dark:text-white text-2xl font-bold">
+          Jobinow
+        </a>
+      </div>
+      <div>
+        <div class="flex-col hidden md:flex justify-center items-center -mx-6 lg:flex-row lg:items-center lg:mx-8">
+          <!--          <input-->
+          <!--            class="rounded-3xl lg:w-[400px] dark:bg-gray-500 sm:w-[250px] md:w-[300px] h-10 px-4 text-[#295e6e] bg-gray-300 dark:text-white opac border-[#5abcd8] hover:opacity-100 focus:opacity-100 focus:outline-none transition-all duration-300 ease-in-out"-->
+          <!--            type="text" placeholder="Search">-->
+        </div>
+      </div>
+      <div
+        class="px-6 py-3 transition-all duration-300 ease-in-out mt-0 p-0 lg:top-0 relative bg-white translate-x-0 flex items-end justify-end">
+        <div class="flex items-center mt-0">
+          <button
+            class="mx-4 text-black dark:text-white transition-colors duration-300 transform block focus:outline-none"
+            aria-label="show notifications">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M15 17H20L18.5951 15.5951C18.2141 15.2141 18 14.6973 18 14.1585V11C18 8.38757 16.3304 6.16509 14 5.34142V5C14 3.89543 13.1046 3 12 3C10.8954 3 10 3.89543 10 5V5.34142C7.66962 6.16509 6 8.38757 6 11V14.1585C6 14.6973 5.78595 15.2141 5.40493 15.5951L4 17H9M15 17V18C15 19.6569 13.6569 21 12 21C10.3431 21 9 19.6569 9 18V17M15 17H9"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+
+          <button type="button" class="flex items-center focus:outline-none" aria-label="toggle profile dropdown">
+            <div class="w-8 h-8 overflow-hidden border-2 border-gray-400 rounded-full">
+              <img
+                src="https://lh3.googleusercontent.com/a/ACg8ocJ_Ab7Vve4Q9MKa4M_khv0GUMWb9rvdkAPdx-JRpBSl_so=s96-c"
+                class="object-cover w-full h-full" alt="avatar" height="2969" width="3000">
+            </div>
+            <h3 class="mx-2 hidden md:block">Bouchettoy Marouane</h3>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>

@@ -1,0 +1,15 @@
+:host {
+  --tui-primary: #295e6e !important;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.table {
+  width: 100%;
+}

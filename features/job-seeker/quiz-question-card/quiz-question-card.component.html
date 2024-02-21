@@ -1,0 +1,98 @@
+<div class="h-screen dark:text-white flex justify-center items-center">
+  <!--  <div class="absolute rounded-lg w-full h-full top-0 right-0 z-0 opacity-10">-->
+  <!--    <img ngSrc="/assets/image/quiz/questionBa.jpg" fill class="h-screen w-full opacity-50" alt="bg-image"/>-->
+  <!--  </div>-->
+  <div class="fixed top-7 left-7">
+    {{ currentQuestion.type }}
+  </div>
+  <div class="fixed top-7 right-7">
+    {{ currentQuestionIndex }}
+  </div>
+  <div class="relative container mx-auto grid grid-cols-1 md:grid-cols-5 px-4 md:px-20 xl:px-72 w-full">
+    <div
+      class="relative col-span-1 md:col-span-5 h-fit w-full px-8 py-4 bg-white rounded-lg shadow dark:bg-gray-700 border border-gray-200 dark:border-gray-700">
+      <div class="absolute rounded-lg w-full h-full top-0 right-0 z-10 opacity-50">
+        <img src="/assets/image/quiz/quizePatternImage.jpeg" fill class="h-full w-full" alt="bg-image"/>
+      </div>
+      <div class="relative z-20">
+        <div class="flex justify-between mb-20 md:mb-0">
+          <div class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                 style="fill: rgb(209, 160, 0)">
+              <path
+                d="M12.25 2c-5.514 0-10 4.486-10 10s4.486 10 10 10 10-4.486 10-10-4.486-10-10-10zM18 13h-6.75V6h2v5H18v2z">
+              </path>
+            </svg>
+            <p class="text-lg flex justify-center items-center gap-3 font-medium">
+              {{ currentQuestion && currentQuestion.time }}
+              <span class="text-sm">Seconds</span>
+            </p>
+          </div>
+          <div class="quiz__title text-center w-full">
+            <!-- Quiz Title -->
+          </div>
+          <div class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                 style="fill: rgb(209, 160, 0)">
+              <path
+                d="M4 11h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zm10 0h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zM4 21h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zm13 0c2.206 0 4-1.794 4-4s-1.794-4-4-4-4 1.794-4 4 1.794 4 4 4z">
+              </path>
+            </svg>
+            <p class="text-lg flex justify-center items-center gap-3 font-medium">
+              1/10
+              <span class="text-sm">
+                                Questions
+                            </span>
+            </p>
+          </div>
+        </div>
+        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          @if (key) {
+            <app-timer
+              [dasharray]="dashArray"
+              [formattedTime]="displayTime"
+              [remainingPathColor]="remainingPathColor"
+            ></app-timer>
+          } @else {
+            <app-timer
+              [dasharray]="dashArray"
+              [formattedTime]="displayTime"
+              [remainingPathColor]="remainingPathColor"
+            ></app-timer>
+          }
+        </div>
+        <!-- question -->
+        @switch (currentQuestion && currentQuestion?.type) {
+          @case (multiChoice) {
+            <app-multichoices-question [question]="currentQuestion"></app-multichoices-question>
+          }
+          @case (multiResponse) {
+            <app-multiresponse-question [question]="currentQuestion"></app-multiresponse-question>
+          }
+          @case (trueFalse) {
+            <app-true-false-question [question]="currentQuestion"></app-true-false-question>
+          }
+          @default {
+            <p class="text-black">No question</p>
+          }
+        }
+        <!--<div class="flex justify-end">
+          <button class="px-6 py-2 hover:bg-blue-700 text-white text-lg font-medium rounded" style="background-color: rgb(255 195 0 / 90%);">
+            Next
+          </button>
+        </div>-->
+      </div>
+    </div>
+  </div>
+  <div class="fixed bottom-0 w-screen h-16 flex items-center pl-4 bg-white">
+    <button class="flex items-center focus:outline-none" aria-label="toggle profile dropdown">
+      <div class="w-8 h-8 overflow-hidden border-2 border-gray-400 rounded-full">
+        <img src="https://lh3.googleusercontent.com/a/ACg8ocJ_Ab7Vve4Q9MKa4M_khv0GUMWb9rvdkAPdx-JRpBSl_so=s96-c" class="object-cover w-full h-full" alt="avatar" height="2969" width="3000">
+      </div>
+      <div class="flex flex-col">
+        <h3 class="mx-2 hidden md:block">Bouchettoy</h3>
+        <h3 class="mx-2 hidden md:block">Marouane</h3>
+      </div>
+    </button>
+  </div>
+</div>
